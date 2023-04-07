@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>洵羽的小站</title>
+    <link rel="icon" href="images/bitbug_favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="assets/waifu.css"/>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <style type="text/css">
+    body{
+        background-image: url('images/animation.jpg') ;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+        .top{
+    height: auto; 
+    width: 100%;
+    margin-left: -8px;
+    background:rgba(57, 197, 187, 0.5);
+    position: fixed; 
+    top: 0;
+    margin-bottom: 5px;
+}
+.top ul{
+    width: auto;
+    list-style-type: none;
+    white-space:nowrap;
+    overflow: hidden;
+    margin-left: 31%;
+
+}
+.top li {
+    float: left; 
+    margin-right:2%;  
+    position: relative;
+    overflow: hidden;
+}
+
+.top li a{
+    display: block;
+    color:white;
+    text-align: center;
+    padding: 3px;
+    overflow: hidden;
+    text-decoration: none;
+    
+}
+.top li a:hover{
+    color: #f391a9;
+}
+.top ul li ul{
+    margin-left: -0.2px;
+    background:rgb(189, 181, 181);
+    position: relative;
+    display: none; 
+
+}
+.top ul li ul li{
+    
+    float:none;
+    text-align: center;
+}
+.top ul li:hover ul{
+    display: block;
+}
+.eight{
+    height: auto;
+    width: auto;
+    margin-bttom: 0px;
+    margin: 0 auto;
+    text-align: center;
+}
+.one{
+    height: 1760px;
+    width: 1000px;
+    background-color: ;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+.two{
+    text-align: right;
+}
+.three{
+    text-align: center;
+    font-family: 幼圆;
+    font-size: 30px;
+    color: #FF0080;
+}
+.four{
+    height: 282px;
+    width: 200px;
+    padding: 20px;
+    transition: transform 0.7s ease 0s;
+}
+.four:hover{
+    transform: scale(1.05);
+}
+.five{
+    height: 370px;
+    width: 1000px;
+    margin: 0 auto;
+    background: rgba(255,228,225,0.4);
+    border-radius:10px;
+}
+.six{
+    height: 282px;
+    width: 700px;
+    float: right;
+    padding: 0px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.six2{
+    height: 282px;
+    width: 700px;
+    float: right;
+    padding: 0px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.six3{
+    height: 282px;
+    width: 700px;
+    float: right;
+    padding: 0px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.six4{
+    height: 282px;
+    width: 700px;
+    float: right;
+    padding: 0px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.six:hover{
+    background: url(images/QQ图片20210604204532.jpg);
+    background-size: cover;
+    opacity: 0.95;
+    color: rgba(105,105,105,0.3);
+    transition:all 0.4s;
+}
+.six2:hover{
+    background: url(images/QQ图片20210604205820.jpg);
+    background-size: cover;
+    opacity: 0.95;
+    color: rgba(105,105,105,0.3);
+    transition:all 0.4s;
+}
+.six3:hover{
+    background: url(images/QQ图片20210604205826.jpg);
+    background-size: cover;
+    opacity: 0.95;
+    color: rgba(105,105,105,0.3);
+    transition:all 0.4s;
+}
+.six4:hover{
+    background: url(images/QQ图片20210604205816.jpg);
+    background-size: cover;
+    opacity: 0.95;
+    color: rgba(105,105,105,0.3);
+    transition:all 0.4s;
+}
+.seven{
+    margin-left: 750px;
+    color: white;
+}
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.0);
+  cursor: pointer;
+  padding: 15px;
+}
+.a{
+    text-decoration: none;
+}
+.nine{
+    padding-left:10px;
+    font-size: 17px;
+}
+
+    </style>
+</head>
+<body>
+    <script>
+    window.onscroll = function() {scrollFunction()};
+ 
+function scrollFunction() {console.log(121);
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
+<button onclick="topFunction()" id="myBtn" title="回顶部"><img src="images/backtop.png"></button>
+    <div class="waifu">
+        <div class="waifu-tips"></div>
+        <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+        <div class="waifu-tool">
+            <span class="fui-home"></span>
+            <span class="fui-chat"></span>
+            <span class="fui-eye"></span>
+            <span class="fui-user"></span>
+            <span class="fui-photo"></span>
+            <span class="fui-info-circle"></span>
+            <span class="fui-cross"></span>
+        </div>
+    </div>
+        
+    <script src="assets/waifu-tips.js"></script>
+    <script src="assets/live2d.js"></script>
+    <script type="text/javascript">initModel("assets/")</script>
+        <div class="top">
+                   <center> 
+                    <ul>
+                    <li><a href="home.html">网站首页</a></li>
+                    <li><a href="animation.html">动漫推荐</a></li>
+                    <li><a href="game.html">游戏推荐</a></li>
+                    <li><a href="music.html">音乐推荐</a></li>
+                    <li><a href="register.html">注册登录</a></li>
+                    <li><a href="js.html">其他</a></li>     
+                      </ul>
+                    </center>      
+            </div>
+    </div>
+    <div class="one">
+        <h1>“</h1>
+        <p class="three">即使互发了一千条短信，心与心的距离却只接近了一厘米</p>
+        <p class="seven">————秒速五厘米<p>
+        <h1 class="two">”</h1>
+        <div class="five">
+        <a href="https://www.bilibili.com/bangumi/play/ep28160?from=search&seid=14483372112913893782">
+        <img class="four" src="images/100403_JFsXn.jpg"></a>
+        <div class="six"><h3>【动画】 路人女主的养成方法</h3><p class="nine">&nbsp&nbsp&nbsp&nbsp春假，为了赚得购入动画 BD 而打工的宅男·安艺伦也在樱花飞舞的道路上遇到了某个少女，对该少女感兴趣的伦也以她为模特制作了相关的同人游戏。一个月後，该少女成为了他的同班同学……为了制作游戏，伦也陆续找了美术部王牌来负责插画、学年第一名的学姐来写作剧本，一行人以 Comike为目标，开始进行相关的游戏制作。电视动画《路人女主的养成方法》改编自由丸户史明原作、深崎暮人负责插画的同名轻小说。作品讲述了身为御宅族的安芸伦也为了制作游戏，说服同年级美术部的绘画高手泽村·斯潘塞·英梨梨，以及优等生学姐霞之丘诗羽和女主角加藤惠，一起共组同人游戏社团，开始了同人游戏制作的故事。</p></div>
+    </div>
+    <div class="five">
+        <a href="https://www.bilibili.com/bangumi/play/ss1547/?from=search&seid=2257642285173601040">
+        <img class="four" src="images/115908_c0uQ.jpg"></a>
+        <div class="six2"><h3>【动画】 吹响上低音号</h3><p class="nine">&nbsp&nbsp&nbsp&nbsp初中曾是吹奏乐部部员的黄前久美子，在刚进入高中的春天，与同班同学加藤叶月、川岛绿辉一起去参考吹奏乐部。在那里，久美子遇见了以前的同班同学高坂丽奈。叶月和绿辉决定加入吹奏乐部，但久美子却有些犹豫。她回想起了在初中吹奏乐比赛时，自己与丽奈之间发生的事情——</p></div>
+    </div>
+    <div class="five">
+        <a href="https://www.bilibili.com/bangumi/play/ss26274/?from=search&seid=9515404207540706580">
+        <img class="four" src="images/248175_4pqpv.jpg"></a>
+        <div class="six3"><h3>【动画】 辉夜大小姐想让我告白~天才们的恋爱头脑战</h3><p class="nine">&nbsp&nbsp&nbsp&nbsp家庭背景与人品都很棒！！一大群有前途的秀才所聚集的秀知院学园！！在那里的学生会相遇的副会长·四宫辉夜与会长·白银御行原本应该是彼此受到了对方吸引…但想不到都过半年了却仍然什么事情也没发生！！最麻烦的是这两个自尊心超强、无法坦率的家伙，居然开始想着要“设法让对方向自己告白”！？直到恋情有下落之前会很欢乐的故事！！新感觉“斗智”爱情喜剧、就此开战！！</p></div>
+    </div>
+    <div class="five">
+        <a href="https://www.acfun.cn/bangumi/aa6004596_36188_1759343">
+        <img class="four" src="images/20210530140655.jpg"></a>
+        <div class="six4"><h3>【动画】 摇曳露营第二季</h3><p class="nine">&nbsp&nbsp&nbsp&nbsp从静冈搬家到山梨的女高中生各务原抚子，为了观赏“在千圆纸币上都有图案的富士山”而骑着自行车来到本栖湖，但不巧天气是阴天。没能看到富士山，十分疲倦的抚子当场进入了梦乡。当她醒来的时候，时间已是深夜。在这初来乍到的地方，连回去的路都不知道。拯救了不安而害怕的抚子的是，一位爱好露营的女孩子·志摩凛。为了让寒冷的身体取暖而点燃篝火的两人。噼啪噼啪的柴火爆音，沁入湖畔的静寂之中。围着篝火，一边啜着咖喱面一边对话的抚子和凛。从此抚子喜欢上了户外野营……
+萌系</p></div>
+    </div>
+    </div>
+    <div class="eight">
+    <footer>
+  <p>南朝四百八十寺，多少楼台烟雨中。</p>
+  <p>Copyright © 2021 友谊的路 All rights reserved. Designed By TinkyWinky <a href="https://dingfsrd.gitee.io/" class="a">洵羽的小站</a></p>
+</footer>
+</div>
+</body>
+</html>

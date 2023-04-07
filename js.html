@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>洵羽的小站</title>
+	<link rel="icon" href="images/bitbug_favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="assets/waifu.css"/>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.12.4.js">
+    </script>
+    <script type="text/javascript">
+	$(document).ready(function(e) {
+        $("#btn").bind("click",function(){
+				alert("欢迎来到洵羽的小站！");
+		});
+    });
+    function all_check(){
+	var oInput=document.getElementsByName("ic");
+ 		for (var i=0;i<oInput.length;i++){
+ 			if (document.getElementById("all").checked==true){
+ 				oInput[i].checked=true;
+ 				}
+ 			else {
+ 				oInput[i].checked=false;
+ 				}
+ 			}
+	}
+
+function single_check(){
+var oInput=document.getElementsByName("ic");
+var j=0;
+  for(var i=0;i<oInput.length;i++){
+ 	  if (oInput[i].checked==true){
+ 		   j=j+1;
+ 		 }
+	}
+
+   if(j==oInput.length){
+	   document.getElementById("all").checked=true;
+	  }
+   else{
+	   document.getElementById("all").checked=false;
+	 }
+}
+var j1 = function(id) {
+				return document.getElementById(id);
+			};
+			onload = function() {
+					console.log("test");
+					var btn = j1("btn1");
+					btn.onclick = function() {
+							var txt = j1("txt").value;
+							console.log(txt);
+							var p = document.createElement("p");
+							p.appendChild(document.createTextNode(txt));
+							var ps = j1("dv").getElementsByTagName("p");
+							if(ps.length > 0) {
+								j1("dv").insertBefore(p, ps[0]);
+
+							} else {
+								j1("dv").appendChild(p);
+
+							}
+							}
+					}
+					function addRow(){
+   var addTable=document.getElementById("order");
+   var row_index=addTable.rows.length-1;       
+   var newRow=addTable.insertRow(row_index);  
+   newRow.id="row"+row_index;                 
+   
+   var col1=newRow.insertCell(0);
+   col1.innerHTML="雪初音";
+   
+   var col2=newRow.insertCell(1);
+   col2.innerHTML=row_index;
+   
+   var col3=newRow.insertCell(2);
+   col3.innerHTML="&yen;9998.00";
+   
+   var col4=newRow.insertCell(3);
+   col4.innerHTML="<input name='del"+row_index+"' type='button' value='删除' onclick=\"delRow('row"+row_index+ "')\" />&nbsp;<input id='edit"+row_index+"' type='button' value='修改' onclick=\"editRow('row"+row_index+ "')\" />";
+
+	}
+	
+function delRow(rowId){
+	var row=document.getElementById(rowId).rowIndex;   
+	document.getElementById("order").deleteRow(row); 
+	}
+	
+function editRow(rowId){
+	var row=document.getElementById(rowId).rowIndex;   
+	var col=document.getElementById(rowId).cells;
+	var text=col[1].innerHTML;
+	col[1].innerHTML="<input name='num"+row+"' style='width:40px;' type='text' value='"+text+"' />";
+	col[3].lastChild.value="确定";
+	col[3].lastChild.setAttribute("onclick","upRow('"+rowId+ "')");
+	
+	
+	}
+	
+function upRow(rowId){
+	var row=document.getElementById(rowId).rowIndex;   
+	var col=document.getElementById(rowId).cells;
+	var text=col[1].firstChild.value;
+	col[1].innerHTML=text;
+	
+	col[3].lastChild.value="修改";
+	col[3].lastChild.setAttribute("onclick","editRow('"+rowId+ "')");
+
+	
+	
+	}
+	function changeTu(tusrc)
+{
+	document.getElementById("tu").src=tusrc;
+}
+$(document).ready(function() {
+	$("table.datalist tr:first").addClass("tableHeader");
+    $("table.datalist tr:even:not(:first)").addClass("evenStyle");
+	$("table.datalist tr:not(:first)").mouseover(function(){
+		$(this).addClass("over1");
+	})
+	.mouseout(function(){
+		$(this).removeClass("over1");
+	});
+	
+	
+	$("#p-list li:nth-child(0)").hide(); 
+});
+$(document).ready(function(){
+    var text=$("#edit_myfrom textarea").val();	
+    var counter=text.length;					
+    $("#numtj var").text(100-counter);			
+    $(document).keyup(function() {				
+        var text=$("#edit_myfrom textarea").val();	
+        var counter=text.length;					
+		if(counter>=100)							
+		{
+			$("#numtj var").text("对不起，输入的字符超长了！");
+			$("#edit_myfrom textarea").attr("readonly",true);
+		}
+		else
+        	$("#numtj var").text(100-counter);
+    });
+});
+    </script>
+    <style type="text/css">
+    body{
+        background-image: url('images/register.jpg') ;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+        .top{
+    height: auto; 
+    width: 100%;
+    margin-left: -8px;
+    background:rgba(57, 197, 187, 0.5);
+    position: fixed; 
+    top: 0;
+    margin-bottom: 5px;
+}
+.top ul{
+    width: auto;
+    list-style-type: none;
+    white-space:nowrap;
+    overflow: hidden;
+    margin-left: 31%;
+
+}
+.top li {
+    float: left; 
+    margin-right:2%;  
+    position: relative;
+    overflow: hidden;
+}
+
+.top li a{
+    display: block;
+    color:white;
+    text-align: center;
+    padding: 3px;
+    overflow: hidden;
+    text-decoration: none;
+    
+}
+.top li a:hover{
+    color: #f391a9;
+}
+.top ul li ul{
+    margin-left: -0.2px;
+    background:rgb(189, 181, 181);
+    position: relative;
+    display: none; 
+
+}
+.top ul li ul li{
+    
+    float:none;
+    text-align: center;
+}
+.top ul li:hover ul{
+    display: block;
+}
+.eight{
+    height: auto;
+    width: auto;
+    margin-bttom: 0px;
+    margin: 0 auto;
+    text-align: center;
+}
+.one{
+    height: 5000px;
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 120px;
+    margin-bottom: 100px;
+    text-align: left;
+    background-color: rgba(240,255,240,0.8);
+    border-radius: 18px;
+}
+.two{
+    width: 300px;
+    height: 400px;
+    float: left;
+    margin-top: 50px;
+    margin-left: 50px;
+    font-size: 18px;
+    line-height: 47px;
+}
+.three{
+    width: 147px;
+    height: 37px;
+    border: white;
+    background: rgba(255,193,193,0.5);
+    color: black;
+    top: 250px;
+    left: 60px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-size: 18px;
+}
+.three:hover{
+    background-color: rgb(255,193,193);
+}
+.four{
+    width: 300px;
+    height: 27px;
+    position: absolute; 
+    background: none;
+    border: none;
+}
+.four:hover{
+    background-color: rgba(255,193,193,0.7);
+}
+.five{
+    font-size: 20px;
+    font-family: 宋体;
+    color: #68228B;
+    text-align: center;
+}
+.one1{
+    height: 200px;
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 200px;
+}
+.two1{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 幼圆;
+    color: #afb4db ;
+    background: rgba(0,0,0,0.5);
+    border-radius:10px;
+    transition: transform 0.7s ease 0s;
+}  
+.three1{
+     height: 150px;
+     width: 150px; 
+     transition: transform 0.5s ease 0s;
+}
+.two1:hover{
+    transform: scale(1.05);
+}
+.three1:hover {
+ transform: rotate(360deg)
+}         
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.0);
+  cursor: pointer;
+  padding: 15px;
+}
+.a{
+    text-decoration: none;
+}
+.datalist td{
+	text-align:center;
+}
+.tableHeader{
+	background:  #FF95CA;
+	color:#FFF;
+	font-weight:bold;
+}
+.evenStyle{
+	background-color:  #4DFFFF;
+}
+.over1{
+	background-color:  #46A3FF;
+}
+    </style>
+</head>
+<body>
+    <script>
+    window.onscroll = function() {scrollFunction()};
+ 
+function scrollFunction() {console.log(121);
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
+<button onclick="topFunction()" id="myBtn" title="回顶部"><img src="images/backtop.png"></button>
+	<div class="waifu">
+        <div class="waifu-tips"></div>
+        <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+        <div class="waifu-tool">
+            <span class="fui-home"></span>
+            <span class="fui-chat"></span>
+            <span class="fui-eye"></span>
+            <span class="fui-user"></span>
+            <span class="fui-photo"></span>
+            <span class="fui-info-circle"></span>
+            <span class="fui-cross"></span>
+        </div>
+    </div>
+        
+    <script src="assets/waifu-tips.js"></script>
+    <script src="assets/live2d.js"></script>
+    <script type="text/javascript">initModel("assets/")</script>
+        <div class="top">
+                   <center> 
+                    <ul>
+                    <li><a href="home.html">网站首页</a></li>
+                    <li><a href="animation.html">动漫推荐</a></li>
+                    <li><a href="game.html">游戏推荐</a></li>
+                    <li><a href="music.html">音乐推荐</a></li>
+                    <li><a href="register.html">注册登录</a></li>
+                    <li><a href="js.html">其他</a></li>     
+                      </ul>
+                    </center>      
+            </div>
+    </div>
+    <div class="one">
+    	<center>
+    	<input type="button" value="点一下" id="btn"/>
+    	<table border="0" cellspacing="0" cellpadding="0">
+  <tr style=" font-weight:bold; ">
+    <td><input id="all" type="checkbox" value="全选" onclick="all_check()" />全选</td>
+  </tr>
+  <tr>
+    <td><input name="ic" type="checkbox" value="" onclick="single_check()" /></td>
+    <td>网站首页</td>
+  </tr>
+  <tr>
+    <td><input name="ic" type="checkbox" value="" onclick="single_check()" /></td>
+    <td>动漫推荐</td>
+  </tr>
+  <tr>
+    <td><input name="ic" type="checkbox" value=""  onclick="single_check()"/></td>
+    <td>游戏推荐</td>
+  </tr>
+  <tr>
+    <td><input name="ic" type="checkbox" value="" onclick="single_check()" /></td>
+    <td>音乐推荐</td>
+  </tr>
+   <tr>
+    <td><input name="ic" type="checkbox" value="" onclick="single_check()" /></td>
+    <td>注册登录</td>
+  </tr>
+   <tr>
+    <td><input name="ic" type="checkbox" value=""  onclick="single_check()"/></td>
+    <td>JavaScript样式</td>
+  </tr>
+</table>
+<h4>你的评论：</h4>
+		<textarea id="txt"></textarea>
+		<br />
+		<input type="button" id="btn1" value="评论" />
+		<h4>你的留言：</h4>
+		<div id="dv"></div>
+		<table border="0" cellspacing="0" cellpadding="0" id="order">
+  <tr class="title">
+    <td>名称</td>
+    <td>数量</td>
+    <td>价格</td>
+    <td>操作</td>
+  </tr>
+  <tr id="del1">
+    <td>雪初音</td>
+    <td>99</td>
+    <td>&yen;9999</td>
+    <td><input name="rowdel" type="button" value="删除" onclick='delRow("del1")' />
+    <input id="edit1" type="button" value="修改" onclick='editRow("del1")' /></td>
+  </tr>
+  <tr>
+    <td colspan="4" style="height:30px;">
+    <input name="addOrder" type="button" value="增加订单" onclick="addRow()" /></td>
+  </tr>
+</table>
+
+<p><img src="images/QQ图片20210604204532.jpg" width="750" height="468" id="tu" /></p>
+<p>&nbsp;</p>
+<p><img src="images/100403_JFsXn.jpg" width="200" height="282" onmouseover="changeTu('images/QQ图片20210604204532.jpg')" style="cursor:pointer"/>&nbsp;&nbsp;<img src="images/115908_c0uQ.jpg" width="200" height="282" onmouseover="changeTu('images/QQ图片20210604205820.jpg')"  style="cursor:pointer" />&nbsp;&nbsp;<img src="images/248175_4pqpv.jpg" width="200" height="282" onmouseover="changeTu('images/QQ图片20210604205826.jpg')"  style="cursor:pointer"/>&nbsp;&nbsp;<img src="images/20210530140655.jpg" width="200" height="282" onmouseover="changeTu('images/QQ图片20210604205816.jpg')" style="cursor:pointer" /></p>
+<h1>双色表格</h1>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="datalist">
+  <tr>
+    <td>名字</td>
+    <td>颜色</td>
+  </tr>
+  <tr>
+    <td>初音</td>
+    <td>雪</td>
+  </tr>
+  <tr>
+    <td>初音</td>
+    <td>雪</td>
+  </tr>
+</table>
+<div id="edit_myfrom">
+   <form action="" method="post">
+           <p id="numtj">你还可以输入<var class="textColor"></var>个字符。</p>
+        <p class="textinput"><label><textarea name="" cols="" rows="" maxlength="110" class="input"></textarea></label></p>
+   </form>
+</div>
+</center>
+    </div>
+    
+    <div class="eight">
+    <footer>
+  <p>南朝四百八十寺，多少楼台烟雨中。</p>
+  <p>Copyright © 2021 友谊的路 All rights reserved. Designed By TinkyWinky <a href="https://dingfsrd.gitee.io/" class="a">洵羽的小站</a></p>
+</footer>
+</div>
+</body>
+</html>
